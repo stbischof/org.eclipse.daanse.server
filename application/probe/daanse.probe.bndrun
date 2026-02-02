@@ -43,7 +43,6 @@
 	bnd.identity;id='org.eclipse.daanse.mdx.parser.ccc',\
 	bnd.identity;id='org.eclipse.daanse.rolap.mapping.model',\
 	bnd.identity;id='org.eclipse.daanse.jdbc.db.importer.csv',\
-	bnd.identity;id='org.gecko.emf.osgi.component',\
 	bnd.identity;id='org.eclipse.daanse.sql.guard.api',\
 	bnd.identity;id='org.eclipse.daanse.sql.guard.jsqltranspiler',\
 	bnd.identity;id='org.eclipse.daanse.rolap.core',\
@@ -55,7 +54,8 @@
 	bnd.identity;id='org.apache.felix.http.servlet-api',\
 	bnd.identity;id='org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.noauth',\
 	bnd.identity;id='org.eclipse.daanse.sql.deparser.api',\
-	bnd.identity;id='org.eclipse.daanse.sql.deparser.jsqlparser'
+	bnd.identity;id='org.eclipse.daanse.sql.deparser.jsqlparser',\
+	bnd.identity;id='org.eclipse.fennec.emf.osgi.component'
 
 
 
@@ -134,6 +134,7 @@
 	org.eclipse.emf.common;version='[2.44.0,2.44.1)',\
 	org.eclipse.emf.ecore;version='[2.41.0,2.41.1)',\
 	org.eclipse.emf.ecore.xmi;version='[2.39.0,2.39.1)',\
+	org.eclipse.fennec.emf.osgi.component;version='[1.0.0,1.0.1)',\
 	org.gecko.emf.osgi.component;version='[6.2.0,6.2.1)',\
 	org.glassfish.hk2.osgi-resource-locator;version='[2.5.0,2.5.1)',\
 	org.jvnet.staxex.stax-ex;version='[2.1.0,2.1.1)',\

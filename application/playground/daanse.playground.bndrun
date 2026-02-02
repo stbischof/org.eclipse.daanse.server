@@ -41,7 +41,6 @@
 	bnd.identity;id='org.eclipse.daanse.mdx.parser.api',\
 	bnd.identity;id='org.eclipse.daanse.mdx.parser.ccc',\
 	bnd.identity;id='org.eclipse.daanse.rolap.mapping.model',\
-	bnd.identity;id='org.gecko.emf.osgi.component',\
 	bnd.identity;id='org.eclipse.daanse.sql.guard.api',\
 	bnd.identity;id='org.eclipse.daanse.sql.guard.jsqltranspiler',\
 	bnd.identity;id='org.eclipse.daanse.rolap.core',\
@@ -68,7 +67,8 @@
 	bnd.identity;id='org.eclipse.daanse.webconsole.branding',\
 	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
 	bnd.identity;id='org.eclipse.daanse.lcid.basic',\
-	bnd.identity;id='org.eclipse.daanse.lcid.cfg'
+	bnd.identity;id='org.eclipse.daanse.lcid.cfg',\
+	bnd.identity;id='org.eclipse.fennec.emf.osgi.component'
 
 
 # This will help us keep -runbundles sorted
