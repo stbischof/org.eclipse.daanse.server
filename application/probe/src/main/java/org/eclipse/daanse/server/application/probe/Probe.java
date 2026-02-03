@@ -19,7 +19,6 @@ import java.util.Hashtable;
 
 import org.eclipse.daanse.io.fs.watcher.api.FileSystemWatcherWhiteboardConstants;
 import org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.noauth.NoAuthDummyFilter;
-import org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.role.BasicAuthPipeRoleFilter;
 import org.eclipse.daanse.olap.core.api.Constants;
 import org.osgi.service.cm.Configuration;
 import org.osgi.service.cm.ConfigurationAdmin;
@@ -135,7 +134,9 @@ public class Probe {
 
         dict.put("osgi.http.whiteboard.filter.pattern", "/*");
         dict.put(org.eclipse.daanse.jakarta.servlet.filter.cors.api.Constants.PROPERTY_ALLOW_CREDENTIALS_PARAM, true);
+        
         dict.put(org.eclipse.daanse.jakarta.servlet.filter.cors.api.Constants.PROPERTY_ALLOWED_ORIGINS_PARAM, "*");
+        dict.put(org.eclipse.daanse.jakarta.servlet.filter.cors.api.Constants.PROPERTY_ALLOWED_HEADERS_PARAM, "*");
         configCorsFilter.update(dict);
 
     }
