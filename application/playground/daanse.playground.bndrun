@@ -32,7 +32,6 @@
 	bnd.identity;id='${project.artifactId}',\
 	bnd.identity;id='org.glassfish.hk2.osgi-resource-locator',\
 	bnd.identity;id='com.sun.xml.messaging.saaj.impl',\
-	bnd.identity;id='org.apache.aries.spifly.dynamic.framework.extension',\
 	bnd.identity;id='org.apache.felix.metatype',\
 	bnd.identity;id='org.eclipse.daanse.olap.xmla.bridge',\
 	bnd.identity;id='org.eclipse.daanse.xmla.server.jakarta.saaj',\
@@ -55,20 +54,18 @@
 	bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.oracle',\
 	bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.postgresql',\
 	bnd.identity;id='org.eclipse.daanse.jdbc.datasource.mssqlserver',\
-	bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.mysql',\
+    bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.mysql',\
 	bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.mssqlserver',\
 	bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.mariadb',\
 	bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.sqlite',\
 	bnd.identity;id='org.apache.felix.fileinstall',\
 	bnd.identity;id='org.eclipse.daanse.jakarta.servlet.filter.cors',\
 	bnd.identity;id='org.apache.commons.commons-fileupload',\
-	bnd.identity;id='org.eclipse.daanse.jdbc.datasource.opensearch',\
-	bnd.identity;id='org.eclipse.daanse.jdbc.db.dialect.db.opensearch',\
-	bnd.identity;id='org.eclipse.daanse.webconsole.branding',\
 	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
 	bnd.identity;id='org.eclipse.daanse.lcid.basic',\
 	bnd.identity;id='org.eclipse.daanse.lcid.cfg',\
-	bnd.identity;id='org.eclipse.fennec.emf.osgi.component'
+	bnd.identity;id='org.eclipse.fennec.emf.osgi.component',\
+	bnd.identity;id='org.apache.aries.spifly.dynamic.bundle'
 
 
 # This will help us keep -runbundles sorted
@@ -76,13 +73,11 @@
     order=sortbynameversion,\
     begin=-1
 
+
+
 -runbundles: \
 	ai.starlake.transpiler;version='[1.0.0,1.0.1)',\
 	ch.qos.logback.classic;version='[1.5.6,1.5.7)',\
-	com.fasterxml.jackson.core.jackson-annotations;version='[2.20.0,2.20.1)',\
-	com.fasterxml.jackson.core.jackson-core;version='[2.20.1,2.20.2)',\
-	com.fasterxml.jackson.core.jackson-databind;version='[2.20.1,2.20.2)',\
-	com.fasterxml.jackson.dataformat.jackson-dataformat-cbor;version='[2.12.3,2.12.4)',\
 	com.github.ben-manes.caffeine;version='[3.1.8,3.1.9)',\
 	com.h2database;version='[2.3.230,2.3.231)',\
 	com.microsoft.sqlserver.mssql-jdbc;version='[12.8.1,12.8.2)',\
@@ -90,14 +85,11 @@
 	com.sun.xml.messaging.saaj.impl;version='[3.0.4,3.0.5)',\
 	jakarta.activation-api;version='[2.1.3,2.1.4)',\
 	jakarta.xml.soap-api;version='[3.0.1,3.0.2)',\
-	joda-time;version='[2.8.1,2.8.2)',\
 	json;version='[20250517.0.0,20250517.0.1)',\
 	net.sf.jsqlparser;version='[5.4.0,5.4.1)',\
-	org.apache.aries.spifly.dynamic.framework.extension;version='[1.3.7,1.3.8)',\
-	org.apache.commons.commons-codec;version='[1.15.0,1.15.1)',\
+	org.apache.aries.spifly.dynamic.bundle;version='[1.3.7,1.3.8)',\
 	org.apache.commons.commons-fileupload;version='[1.6.0,1.6.1)',\
 	org.apache.commons.commons-io;version='[2.19.0,2.19.1)',\
-	org.apache.commons.logging;version='[1.1.3,1.1.4)',\
 	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
 	org.apache.felix.configadmin.plugin.interpolation;version='[1.2.8,1.2.9)',\
 	org.apache.felix.fileinstall;version='[3.7.4,3.7.5)',\
@@ -113,7 +105,6 @@
 	org.eclipse.daanse.jdbc.datasource.h2;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.datasource.mssqlserver;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.datasource.mysql;version='[0.0.1,0.0.2)',\
-	org.eclipse.daanse.jdbc.datasource.opensearch;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.datasource.oracle;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.datasource.postgresql;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.datasource.sqlite;version='[0.0.1,0.0.2)',\
@@ -125,7 +116,6 @@
 	org.eclipse.daanse.jdbc.db.dialect.db.mariadb;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.db.dialect.db.mssqlserver;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.db.dialect.db.mysql;version='[0.0.1,0.0.2)',\
-	org.eclipse.daanse.jdbc.db.dialect.db.opensearch;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.db.dialect.db.oracle;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.db.dialect.db.postgresql;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jdbc.db.dialect.db.sqlite;version='[0.0.1,0.0.2)',\
@@ -148,15 +138,14 @@
 	org.eclipse.daanse.sql.deparser.api;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.sql.guard.api;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.sql.guard.jsqltranspiler;version='[0.0.1,0.0.2)',\
-	org.eclipse.daanse.webconsole.branding;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.xmla.api;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.xmla.model.record;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.xmla.server.adapter.soapmessage;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.xmla.server.jakarta.saaj;version='[0.0.1,0.0.2)',\
-	org.eclipse.emf.common;version='[2.30.0,2.30.1)',\
-	org.eclipse.emf.ecore;version='[2.36.0,2.36.1)',\
-	org.eclipse.emf.ecore.xmi;version='[2.37.0,2.37.1)',\
-	org.gecko.emf.osgi.component;version='[6.2.0,6.2.1)',\
+	org.eclipse.emf.common;version='[2.44.0,2.44.1)',\
+	org.eclipse.emf.ecore;version='[2.41.0,2.41.1)',\
+	org.eclipse.emf.ecore.xmi;version='[2.39.0,2.39.1)',\
+	org.eclipse.fennec.emf.osgi.component;version='[1.0.0,1.0.1)',\
 	org.glassfish.hk2.osgi-resource-locator;version='[2.5.0,2.5.1)',\
 	org.jvnet.staxex.stax-ex;version='[2.1.0,2.1.1)',\
 	org.objectweb.asm;version='[9.9.0,9.9.1)',\

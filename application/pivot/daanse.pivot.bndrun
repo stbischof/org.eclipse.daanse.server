@@ -51,6 +51,10 @@
     order=sortbynameversion,\
     begin=-1
 
+
+
+
+
 -runbundles: \
 	ai.starlake.transpiler;version='[1.0.0,1.0.1)',\
 	ch.qos.logback.classic;version='[1.5.6,1.5.7)',\
@@ -95,7 +99,6 @@
 	org.eclipse.emf.ecore;version='[2.41.0,2.41.1)',\
 	org.eclipse.emf.ecore.xmi;version='[2.39.0,2.39.1)',\
 	org.eclipse.fennec.emf.osgi.component;version='[1.0.0,1.0.1)',\
-	org.gecko.emf.osgi.component;version='[6.2.0,6.2.1)',\
 	org.glassfish.hk2.osgi-resource-locator;version='[2.5.0,2.5.1)',\
 	org.jvnet.staxex.stax-ex;version='[2.1.0,2.1.1)',\
 	org.objectweb.asm;version='[9.9.0,9.9.1)',\
