@@ -52,7 +52,6 @@
 	bnd.identity;id='org.eclipse.daanse.rolap.documentation.common',\
 	bnd.identity;id='org.eclipse.daanse.olap.odc',\
 	bnd.identity;id='org.apache.felix.http.servlet-api',\
-	bnd.identity;id='org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.noauth',\
 	bnd.identity;id='org.eclipse.daanse.sql.deparser.api',\
 	bnd.identity;id='org.eclipse.daanse.sql.deparser.jsqlparser',\
 	bnd.identity;id='org.eclipse.fennec.emf.osgi.component',\
@@ -96,7 +95,6 @@
 	org.eclipse.daanse.cwm.util;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.io.fs.watcher.api;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.io.fs.watcher.watchservice;version='[0.0.1,0.0.2)',\
-	org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.noauth;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.role;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jakarta.servlet.filter.cors;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jakarta.servlet.soap;version='[0.0.1,0.0.2)',\
