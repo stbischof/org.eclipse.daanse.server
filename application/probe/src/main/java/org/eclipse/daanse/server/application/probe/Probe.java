@@ -18,7 +18,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 import org.eclipse.daanse.io.fs.watcher.api.FileSystemWatcherWhiteboardConstants;
-import org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.noauth.NoAuthDummyFilter;
+import org.eclipse.daanse.jakarta.servlet.filter.auth.dummy.role.BasicAuthPipeRoleFilter;
 import org.eclipse.daanse.olap.core.api.Constants;
 import org.osgi.service.cm.Configuration;
 import org.osgi.service.cm.ConfigurationAdmin;
@@ -119,7 +119,8 @@ public class Probe {
 
     private void initRoleAuthFilter() throws IOException {
 
-        configAuthFilter = ca.getFactoryConfiguration(NoAuthDummyFilter.PID, CONFIG_IDENT, "?");
+        //configAuthFilter = ca.getFactoryConfiguration(NoAuthDummyFilter.PID, CONFIG_IDENT, "?");
+        configAuthFilter = ca.getFactoryConfiguration(BasicAuthPipeRoleFilter.PID, CONFIG_IDENT, "?");
 
 //        configAuthFilter = ca.getFactoryConfiguration(BasicAuthPipeRoleFilter.PID, CONFIG_IDENT, "?");
         Dictionary<String, Object> dict = new Hashtable<>();
