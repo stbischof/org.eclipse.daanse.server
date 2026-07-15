@@ -17,7 +17,7 @@ import static org.eclipse.daanse.jdbc.datasource.h2.api.Constants.DATASOURCE_PRO
 import static org.eclipse.daanse.jdbc.datasource.h2.api.Constants.DATASOURCE_PROPERTY_PLUGABLE_FILESYSTEM;
 import static org.eclipse.daanse.jdbc.datasource.h2.api.Constants.OPTION_PLUGABLE_FILESYSTEM_MEM_FS;
 import static org.eclipse.daanse.jdbc.datasource.h2.api.Constants.PID_DATASOURCE;
-import static org.eclipse.daanse.jdbc.db.importer.csv.api.Constants.PID_CSV_DATA_IMPORTER;
+import static org.eclipse.daanse.sql.jdbc.importer.csv.api.Constants.PID_CSV_DATA_IMPORTER;
 import static org.eclipse.daanse.rolap.core.api.Constants.BASIC_CONTEXT_PID;
 import static org.eclipse.daanse.rolap.core.api.Constants.BASIC_CONTEXT_REF_NAME_CATALOG_MAPPING_SUPPLIER;
 import static org.eclipse.daanse.rolap.core.api.Constants.BASIC_CONTEXT_REF_NAME_DATA_SOURCE;

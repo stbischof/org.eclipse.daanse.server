@@ -60,7 +60,7 @@
 
         <dependency>
             <groupId>org.eclipse.daanse</groupId>
-            <artifactId>org.eclipse.daanse.jdbc.db.importer.csv</artifactId>
+            <artifactId>org.eclipse.daanse.sql.jdbc.importer.csv</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

@@ -75,7 +75,7 @@
   <dependencies>
     <dependency>
       <groupId>org.eclipse.daanse</groupId>
-      <artifactId>org.eclipse.daanse.jdbc.db.dialect.db.h2</artifactId>
+      <artifactId>org.eclipse.daanse.sql.dialect.db.h2</artifactId>
       <version>0.0.1-SNAPSHOT</version>
       <scope>runtime</scope>
     </dependency>
