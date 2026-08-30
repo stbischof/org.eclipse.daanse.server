@@ -54,6 +54,41 @@ The playground application source can be found at:
 - Java development environment
 - Understanding of security implications
 
+## Default configuration
+
+The `load/` directory is watched by Felix FileInstall (its default directory) and ships a
+working two-database default: one catalog served from **PostgreSQL** and one from
+**Oracle**, both published on the **same XMLA endpoint**.
+
+| File(s) | Purpose |
+|---|---|
+| `daanse.jdbc.datasource.{postgresql,oracle}.DataSource-*.cfg` | one DataSource per database, tagged `daanse.ident=ds-pg` / `ds-ora` |
+| `daanse.jdbc.datasource.pools.hikari.ConnectionPool-*.cfg` | one connection pool per DataSource |
+| `daanse.rolap.mapping.model.provider.EmfMappingProvider-*.cfg` | one mapping per catalog XMI (`catalog/catalog.postgres.xmi`, `catalog/catalog.oracle.xmi`) |
+| `daanse.rolap.core.BasicContext-*.cfg` | one context per catalog: pool + mapping + dialect (`POSTGRESQL` / `ORACLE`) |
+| `daanse.olap.core.BasicContextGroup-main.cfg` | groups both contexts (`context.target=(daanse.ident=ctx-*)`) |
+| `daanse.olap.xmla.connector.OlapXmlaConnector-main.cfg` | XMLA service over the group |
+| `org.eclipse.daanse.xmla.server.whiteboard.servlet.XmlaServlet-main.cfg` | servlet at `/xmla` |
+
+The endpoint is `http://localhost:8090/xmla` (HTTP port from the bndrun). Both catalogs —
+`Playground Postgres` (cube `CubePostgres`) and `Playground Oracle` (cube `CubeOracle`) —
+appear in `DBSCHEMA_CATALOGS` of that one endpoint; each expects a table
+`fact("key","value")` / `FACT("KEY","VALUE")`.
+
+Matching local databases:
+
+```bash
+podman run -d --name playground-pg -e POSTGRES_USER=daanse -e POSTGRES_PASSWORD=daanse \
+  -e POSTGRES_DB=daanse -p 5432:5432 docker.io/library/postgres:17-alpine
+podman run -d --name playground-ora -e ORACLE_PASSWORD=admin -e APP_USER=daanse \
+  -e APP_USER_PASSWORD=daanse -p 1521:1521 docker.io/gvenzl/oracle-free:23-slim
+```
+
+Then create/seed the fact tables (`fact` lowercase in PostgreSQL, `FACT` uppercase in
+Oracle service `FREEPDB1`) and start the server with `./start` (or
+`java -jar target/daanse.playground.jar` from this directory — FileInstall resolves
+`./load` and the mappings resolve `./catalog` relative to the working directory).
+
 ## Important Notes
 
 ⚠️ **Security Warning**: This application should only be used in development environments due to the increased attack surface from the comprehensive component set.

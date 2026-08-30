@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:relational="http://www.omg.org/spec/CWM/1.1/resource/relational" xmlns:rolapcat="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping/catalog" xmlns:rolapcube="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping/olap/cube" xmlns:rolapmeas="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping/olap/cube/measure" xmlns:rolapsrc="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping/database/source">
+  <rolapcat:Catalog xmi:id="_catalog_ora" name="Playground Oracle" importedElement="_schema">
+    <ownedElement xsi:type="rolapsrc:TableSource" xmi:id="_tablesource_fact" name="FACT" table="_table_fact"/>
+    <ownedElement xsi:type="rolapcube:PhysicalCube" xmi:id="_cube_ora" name="CubeOracle" source="_tablesource_fact">
+      <measureGroups xmi:id="_measuregroup_ora" name="CubeOracle">
+        <measures xsi:type="rolapmeas:SumMeasure" xmi:id="_sum_value_ora" name="ValueSum" column="_column_fact_value"/>
+      </measureGroups>
+    </ownedElement>
+  </rolapcat:Catalog>
+  <relational:SQLSimpleType xmi:id="_sqlsimpletype_character_varying" name="CHARACTER VARYING" typeNumber="12"/>
+  <relational:SQLSimpleType xmi:id="_sqlsimpletype_integer" name="INTEGER" typeNumber="4"/>
+  <relational:Schema xmi:id="_schema" importer="_catalog_ora">
+    <ownedElement xsi:type="relational:Table" xmi:id="_table_fact" name="FACT">
+      <feature xsi:type="relational:Column" xmi:id="_column_fact_key" name="KEY" type="_sqlsimpletype_character_varying"/>
+      <feature xsi:type="relational:Column" xmi:id="_column_fact_value" name="VALUE" type="_sqlsimpletype_integer"/>
+    </ownedElement>
+  </relational:Schema>
+</xmi:XMI>

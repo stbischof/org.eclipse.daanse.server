@@ -227,16 +227,6 @@ public class ProbeFileListener implements FileSystemWatcherListener {
         props.put(BASIC_CONTEXT_REF_NAME_DIALECT_FACTORY + TARGET_EXT, "(org.eclipse.daanse.dialect.name=DUCKDB)");
         props.put(BASIC_CONTEXT_REF_NAME_CATALOG_MAPPING_SUPPLIER + TARGET_EXT, filterOfMatcherKey(matcherKey));
 
-        String catalog_path = path.toString();
-        String theDescription = "theDescription for " + catalog_path;
-
-        String name = path.toString();
-        if (name == null || name.isEmpty()) {
-            name = "not_set" + UUID.randomUUID().toString();
-        }
-        props.put("name", name);
-        props.put("description", theDescription);
-        props.put("catalog.path", catalog_path);
         props.put("useAggregates", true);
         props.put(KEY_FILE_CONTEXT_MATCHER, matcherKey);
         configContext.update(props);

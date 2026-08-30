@@ -87,8 +87,6 @@ split over several cross-referencing files, point
 |---|---|---|
 | `DAANSE_CATALOG_RESOURCE` | `/app/catalog/catalog.xmi` | Primary catalog mapping file (EMF XMI with a Catalog root element) |
 | `DAANSE_CATALOG_ADDITIONAL_GLOBS` | *(unset)* | Comma separated glob patterns for additional mapping resources |
-| `DAANSE_CONTEXT_NAME` | `daanse` | Name of the OLAP context |
-| `DAANSE_CONTEXT_DESCRIPTION` | `Daanse XMLA Server` | Description of the OLAP context |
 | `DAANSE_USE_AGGREGATES` | `false` | Use aggregate tables |
 | `DAANSE_XMLA_PATH` | `/xmla` | Servlet pattern of the XMLA endpoint |
 | `DAANSE_CORS_ENABLED` | `true` | Register the CORS filter |

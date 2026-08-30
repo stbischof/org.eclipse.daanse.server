@@ -66,9 +66,6 @@ public final class BasicContextConfigs {
                 filter(ServerConstants.PROP_IDENT, ServerConstants.IDENT_MAPPING));
         props.put(Constants.BASIC_CONTEXT_REF_NAME_DIALECT_FACTORY + ServerConstants.TARGET_EXT,
                 filter(DaanseDialectConstants.DIALECT_NAME_PROPERTY, dialectName));
-        props.put("name", Env.get(ServerConstants.ENV_CONTEXT_NAME, ServerConstants.DEFAULT_CONTEXT_NAME));
-        props.put("description",
-                Env.get(ServerConstants.ENV_CONTEXT_DESCRIPTION, ServerConstants.DEFAULT_CONTEXT_DESCRIPTION));
         props.put("useAggregates", Env.get(ServerConstants.ENV_USE_AGGREGATES, false));
 
         configuration.update(props);

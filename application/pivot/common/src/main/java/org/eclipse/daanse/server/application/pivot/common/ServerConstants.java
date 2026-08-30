@@ -81,8 +81,6 @@ public final class ServerConstants {
 
     public static final String ENV_CATALOG_RESOURCE = "DAANSE_CATALOG_RESOURCE";
     public static final String ENV_CATALOG_ADDITIONAL_GLOBS = "DAANSE_CATALOG_ADDITIONAL_GLOBS";
-    public static final String ENV_CONTEXT_NAME = "DAANSE_CONTEXT_NAME";
-    public static final String ENV_CONTEXT_DESCRIPTION = "DAANSE_CONTEXT_DESCRIPTION";
     public static final String ENV_USE_AGGREGATES = "DAANSE_USE_AGGREGATES";
     public static final String ENV_XMLA_PATH = "DAANSE_XMLA_PATH";
     public static final String ENV_CORS_ENABLED = "DAANSE_CORS_ENABLED";
@@ -91,7 +89,5 @@ public final class ServerConstants {
     public static final String ENV_CORS_ALLOW_CREDENTIALS = "DAANSE_CORS_ALLOW_CREDENTIALS";
 
     public static final String DEFAULT_CATALOG_RESOURCE = "/app/catalog/catalog.xmi";
-    public static final String DEFAULT_CONTEXT_NAME = "daanse";
-    public static final String DEFAULT_CONTEXT_DESCRIPTION = "Daanse XMLA Server";
     public static final String DEFAULT_XMLA_PATH = "/xmla";
 }

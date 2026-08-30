@@ -4,3 +4,5 @@ catalog/*
 !catalog/.keep
 load/*
 !load/.keep
+!load/*.cfg
+!catalog/*.xmi

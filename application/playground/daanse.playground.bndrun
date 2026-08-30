@@ -17,8 +17,7 @@
 -runproperties: \
     org.slf4j.simpleLogger.defaultLogLevel=error,\
 	org.osgi.service.http.port=8090,\
-    logback.configurationFile=${.}/logback.xml,\
-    daanse.probe.catalog.dir=${.}/catalog
+    logback.configurationFile=${.}/logback.xml
 
 -runpath: \
 	ch.qos.logback.classic,\
@@ -33,7 +32,12 @@
 	bnd.identity;id='org.glassfish.hk2.osgi-resource-locator',\
 	bnd.identity;id='org.apache.felix.metatype',\
 	bnd.identity;id='org.eclipse.daanse.olap.xmla.connector',\
+	bnd.identity;id='org.eclipse.daanse.olap.xmla.connector.multidimensional',\
+	bnd.identity;id='org.eclipse.daanse.olap.xmla.connector.relational',\
+	bnd.identity;id='org.eclipse.daanse.olap.xmla.connector.relational.oledb',\
 	bnd.identity;id='org.eclipse.daanse.xmla.server.whiteboard.servlet',\
+	bnd.identity;id='org.eclipse.daanse.xmla.server.auth.roles',\
+	bnd.identity;id='org.eclipse.daanse.xmla.server.auth.dummy',\
 	bnd.identity;id='ch.qos.logback.classic',\
 	bnd.identity;id='org.eclipse.daanse.sql.jdbc.impl',\
 	bnd.identity;id='org.eclipse.daanse.mdx.parser.api',\
@@ -121,6 +125,9 @@
 	org.eclipse.daanse.olap.spi;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.olap.util.format;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.olap.xmla.connector;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.olap.xmla.connector.multidimensional;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.olap.xmla.connector.relational;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.olap.xmla.connector.relational.oledb;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.rolap.core;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.rolap.mapping.model;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.server.application.playground;version='[0.0.1,0.0.2)',\
@@ -163,6 +170,8 @@
 	org.eclipse.daanse.xmla.model.soap;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.xmla.model.xmla;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.xmla.server.adapter.emf;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.xmla.server.auth.dummy;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.xmla.server.auth.roles;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.xmla.server.whiteboard.servlet;version='[0.0.1,0.0.2)',\
 	org.eclipse.emf.common;version='[2.44.0,2.44.1)',\
 	org.eclipse.emf.ecore;version='[2.41.0,2.41.1)',\
