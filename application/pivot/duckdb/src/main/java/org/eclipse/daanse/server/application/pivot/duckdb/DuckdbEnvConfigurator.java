@@ -38,7 +38,9 @@ import org.slf4j.LoggerFactory;
  * variables and creates the BasicContext against it. Every attribute of
  * {@link DsConfig} is supported. The database file defaults to
  * {@code /app/data/database.duckdb} (mount it into the container) and is
- * opened read-only unless {@code DAANSE_JDBC_READ_ONLY=false}.
+ * opened read-only unless {@code DAANSE_JDBC_READ_ONLY=false} or
+ * {@code DAANSE_JDBC_ACCESS_MODE} (or an {@code access_mode} entry of
+ * {@code DAANSE_JDBC_SETTINGS}) names another mode.
  */
 @Component(immediate = true)
 @RequireConfigurationAdmin
@@ -63,8 +65,12 @@ public class DuckdbEnvConfigurator {
         if (props.get(Constants.DATASOURCE_PROPERTY_DATABASENAME) == null) {
             props.put(Constants.DATASOURCE_PROPERTY_DATABASENAME, DEFAULT_DATABASE_FILE);
         }
+        // A given access mode decides; read-only is only the default where it
+        // is absent. DuckDB refuses the two contradicting.
+        String accessMode = accessMode(props);
+        boolean accessModeReadOnly = Constants.ACCESS_MODE_READ_ONLY.equalsIgnoreCase(accessMode);
         if (props.get(Constants.DATASOURCE_PROPERTY_READ_ONLY) == null) {
-            props.put(Constants.DATASOURCE_PROPERTY_READ_ONLY, true);
+            props.put(Constants.DATASOURCE_PROPERTY_READ_ONLY, accessMode == null || accessModeReadOnly);
         }
         props.put(ServerConstants.PROP_IDENT, ServerConstants.IDENT_DATASOURCE);
 
@@ -74,9 +80,28 @@ public class DuckdbEnvConfigurator {
         // DuckDB connections are fixed to the read-only mode of the DataSource;
         // the pool must mark its connections the same way or the driver refuses.
         confPoolAndContext = BasicContextConfigs.createEnvPoolAndContext(ca, DIALECT_NAME,
-                (Boolean) props.get(Constants.DATASOURCE_PROPERTY_READ_ONLY));
+                accessModeReadOnly || (Boolean) props.get(Constants.DATASOURCE_PROPERTY_READ_ONLY));
 
         logger.info("DuckDB DataSource, connection pool and context configured from environment");
+    }
+
+    /**
+     * The configured access mode - the attribute, else the {@code access_mode}
+     * entry of the settings - or {@code null}.
+     */
+    static String accessMode(Dictionary<String, Object> props) {
+        if (props.get(Constants.DATASOURCE_PROPERTY_ACCESS_MODE) instanceof String attribute) {
+            return attribute.trim();
+        }
+        if (props.get(Constants.DATASOURCE_PROPERTY_SETTINGS) instanceof String[] entries) {
+            for (String entry : entries) {
+                int equals = entry.indexOf('=');
+                if (equals > 0 && Constants.SETTING_ACCESS_MODE.equalsIgnoreCase(entry.substring(0, equals).trim())) {
+                    return entry.substring(equals + 1).trim();
+                }
+            }
+        }
+        return null;
     }
 
     @Deactivate
